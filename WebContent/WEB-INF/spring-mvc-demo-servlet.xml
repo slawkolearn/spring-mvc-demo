@@ -20,6 +20,9 @@
 	<!-- add countries.properties file for country list to pick  -->
 	<util:properties id="countryOptions" location="classpath:../countries.properties" />
 
+	<!-- add language.properties file for favorite language list to pick  -->
+	<util:properties id="favoriteLanguages" location="classpath:../languages.properties" />
+
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
 
