@@ -1,5 +1,8 @@
 package com.slawomirlasik.springdemo.mvc;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Student {
 
 	private String firstName;
@@ -9,9 +12,20 @@ public class Student {
 	private String country;
 
 	private String favoriteLanguage;
+	
+	private Map<String, String> favoriteLanguagesOptions;
 
 	public Student() {
 		super();
+		
+		favoriteLanguagesOptions = new LinkedHashMap<>();
+		
+		// parameter order: value, display label
+		favoriteLanguagesOptions.put("Java", "Java");
+		favoriteLanguagesOptions.put("C#", "C#");
+		favoriteLanguagesOptions.put("PHP", "PHP");
+		favoriteLanguagesOptions.put("Ruby", "Ruby");
+		favoriteLanguagesOptions.put("Python", "Python");
 
 	}
 
@@ -45,6 +59,10 @@ public class Student {
 
 	public void setFavoriteLanguage(String favoriteLanguage) {
 		this.favoriteLanguage = favoriteLanguage;
+	}
+
+	public Map<String, String> getFavoriteLanguagesOptions() {
+		return favoriteLanguagesOptions;
 	}
 
 }
