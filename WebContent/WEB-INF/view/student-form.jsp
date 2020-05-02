@@ -41,7 +41,7 @@
 			Favorite Language:
 			
 			<!--  on submit, spring will call student.setFavoriteLanguage() -->
-			<form:radiobuttons path="favoriteLanguage" items="${student.favoriteLanguagesOptions}"/>
+			<form:radiobuttons path="favoriteLanguage" items="${theFavoriteLanguagesOptions}"/>
 
 		<br>
 		<br>
