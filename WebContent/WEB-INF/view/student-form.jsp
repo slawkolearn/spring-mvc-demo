@@ -40,7 +40,7 @@
 			<form:option value="Canada" label="Canada"></form:option> --%>
 
 			<!-- for automatic using spring tags list setup -->
-			<form:options items="${student.countryOptions}" />
+			<form:options items="${theCountryOptions}" />
 
 
 		</form:select>
