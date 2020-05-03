@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/student")
 public class StudentController {
-	
+
 	@Value("#{countryOptions}")
 	private Map<String, String> countryOptions;
-	
+
 	@Value("#{favoriteLanguages}")
 	private Map<String, String> favoriteLanguagesOptions;
+
+	@Value("#{operatingSystems}")
+	private Map<String, String> preferedOperatingSystems;
 
 	@RequestMapping("/showForm")
 	public String showForm(Model theModel) {
@@ -26,12 +29,15 @@ public class StudentController {
 
 		// add a student object to the model
 		theModel.addAttribute("student", theStudent);
-		
+
 		// add the country options to the model
 		theModel.addAttribute("theCountryOptions", countryOptions);
-		
+
 		// add the favorite languages options to the model
 		theModel.addAttribute("theFavoriteLanguagesOptions", favoriteLanguagesOptions);
+
+		// add the favorite languages options to the model
+		theModel.addAttribute("thePreferedOperatingSystems", preferedOperatingSystems);
 
 		return "student-form";
 	}
