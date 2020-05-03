@@ -23,6 +23,9 @@
 	<!-- add language.properties file for favorite language list to pick  -->
 	<util:properties id="favoriteLanguages" location="classpath:../languages.properties" />
 
+	<!-- add language.properties file for operating-systems list to pick  -->
+	<util:properties id="operatingSystems" location="classpath:../operating-systems.properties" />
+
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
 

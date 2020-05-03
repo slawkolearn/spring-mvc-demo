@@ -1,8 +1,5 @@
 package com.slawomirlasik.springdemo.mvc;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Student {
 
 	private String firstName;
@@ -12,6 +9,8 @@ public class Student {
 	private String country;
 
 	private String favoriteLanguage;
+	
+	private String[] operatingSystems;
 
 	public Student() {
 		super();
@@ -48,6 +47,14 @@ public class Student {
 
 	public void setFavoriteLanguage(String favoriteLanguage) {
 		this.favoriteLanguage = favoriteLanguage;
+	}
+
+	public String[] getOperatingSystems() {
+		return operatingSystems;
+	}
+
+	public void setOperatingSystems(String[] operatingSystems) {
+		this.operatingSystems = operatingSystems;
 	}
 
 }

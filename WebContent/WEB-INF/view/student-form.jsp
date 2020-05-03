@@ -34,17 +34,24 @@
 
 
 
-			</form:select>
+		</form:select>
 		<br>
 		<br>
 		<!-- for automatic using spring tags list setup -->
 			Favorite Language:
 			
 			<!--  on submit, spring will call student.setFavoriteLanguage() -->
-			<form:radiobuttons path="favoriteLanguage" items="${theFavoriteLanguagesOptions}"/>
+		<form:radiobuttons path="favoriteLanguage"
+			items="${theFavoriteLanguagesOptions}" />
 
 		<br>
 		<br>
+
+		 Operating Systems:
+		 
+		 <form:checkboxes items="${thePreferedOperatingSystems}"
+			path="operatingSystems" />
+
 
 
 		<br>
