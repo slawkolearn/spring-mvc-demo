@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" 
-        xmlns:context="http://www.springframework.org/schema/context" 
-        xmlns:mvc="http://www.springframework.org/schema/mvc" 
-        xmlns:util="http://www.springframework.org/schema/util" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
             http://www.springframework.org/schema/beans     
             http://www.springframework.org/schema/beans/spring-beans.xsd     
             http://www.springframework.org/schema/context     
@@ -15,25 +15,36 @@
             http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- Step 3: Add support for component scanning -->
-	<context:component-scan base-package="com.slawomirlasik.springdemo" />
-	
-	<!-- add countries.properties file for country list to pick  -->
-	<util:properties id="countryOptions" location="classpath:../countries.properties" />
+	<context:component-scan
+		base-package="com.slawomirlasik.springdemo" />
 
-	<!-- add language.properties file for favorite language list to pick  -->
-	<util:properties id="favoriteLanguages" location="classpath:../languages.properties" />
+	<!-- add countries.properties file for country list to pick -->
+	<util:properties id="countryOptions"
+		location="classpath:../countries.properties" />
 
-	<!-- add language.properties file for operating-systems list to pick  -->
-	<util:properties id="operatingSystems" location="classpath:../operating-systems.properties" />
+	<!-- add language.properties file for favorite language list to pick -->
+	<util:properties id="favoriteLanguages"
+		location="classpath:../languages.properties" />
+
+	<!-- add language.properties file for operating-systems list to pick -->
+	<util:properties id="operatingSystems"
+		location="classpath:../operating-systems.properties" />
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven />
 
 	<!-- Step 5: Define Spring MVC view resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- load custom message resources -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+
+		<property name="basenames" value="resources/messages" />
 	</bean>
 
 </beans>
