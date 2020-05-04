@@ -1,6 +1,5 @@
 package com.slawomirlasik.springdemo.mvc.validation;
 
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -16,7 +15,7 @@ import javax.validation.Payload;
 public @interface CourseCode {
 	
 	// define default course code
-	public String value() default "LUV";
+	public String[] value() default {"LUV"};
 	
 	// define default error message
 	public String message() default "must start with LUV";
